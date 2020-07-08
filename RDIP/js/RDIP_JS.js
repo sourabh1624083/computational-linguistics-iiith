@@ -18,7 +18,7 @@ function selectfun() {
     let s = document.getElementById('ab').value;
     document.getElementById('pid1').innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words<br>"
     document.getElementById('pid2').innerHTML = "(select the buttons in proper order)"
-
+    document.getElementById('correctcheck').style.display = 'none';
     document.getElementById('show').innerHTML = "";
     document.getElementById('showbef').innerHTML = "";
     document.getElementById('reform').style.display = 'none'
@@ -121,6 +121,9 @@ function showfun(id) {
     document.getElementById('show').innerHTML = output
     hidebtn.push(event.srcElement.id)
         //console.log(hidebtn)
+    if (hidebtn.length === imprandomstore.length) {
+        document.getElementById('correctcheck').style.display = 'block';
+    }
 }
 
 function reformsent() {
