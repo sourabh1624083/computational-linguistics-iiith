@@ -9,6 +9,13 @@
     font-size: 20px;
 }
 
+.showbeforetext {
+    color: darkblue;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
 .btn1 {
     font-size: large;
     font-style: oblique;
