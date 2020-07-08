@@ -21,7 +21,8 @@ function selectfun() {
     document.getElementById('correctcheck').style.display = 'none';
     document.getElementById('show').innerHTML = "";
     document.getElementById('showbef').innerHTML = "";
-    document.getElementById('reform').style.display = 'none'
+    document.getElementById('reform').style.display = 'none';
+    document.getElementById('wrong').innerHTML = "";
     if (s === 'English') {
         x.style.display = "block";
 
@@ -130,6 +131,9 @@ function reformsent() {
     document.getElementById('show').innerHTML = "";
     document.getElementById('btns').innerHTML = "";
     document.getElementById('showbef').innerHTML = "";
+    document.getElementById('wrong').innerHTML = "";
+    document.getElementById('correctcheck').style.display = 'none';
+
     output = ""
     hidebtn = [];
     document.getElementById('reform').style.display = 'none'
@@ -149,4 +153,20 @@ function showbtnagain() {
         var buttonDiv = document.getElementById("btns");
         buttonDiv.appendChild(button);
     }
+}
+
+function checkcorrectness() {
+
+    document.getElementById('wrong').innerHTML = "";
+    var str = output.trim();
+    for (var i = 0; i < imp1.length; i++) {
+        var str1 = imp1[i].trim();
+        console.log(i, str.localeCompare(str1), output)
+        if (str.localeCompare(str1) == 0) {
+            document.getElementById('right').innerHTML = "Right !!!";
+            //console.log("Write")
+            return;
+        }
+    }
+    document.getElementById('wrong').innerHTML = "Wrong !!!";
 }
