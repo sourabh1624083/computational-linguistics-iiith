@@ -1,0 +1,5 @@
+First make drop down onselect show the text of the sentence in button
+and then on either of button is clicked show the forming sentence and 
+after first click show reform the sentence
+lastly after all the buttons are clicked show the check the sentence button 
+ 
