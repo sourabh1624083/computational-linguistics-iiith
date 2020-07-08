@@ -6,12 +6,32 @@
 
 .text1 {
     color: blue;
+    font-size: 20px;
 }
 
 .btn1 {
     font-size: large;
     font-style: oblique;
     text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+.reformclass {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: larger;
+}
+
+.showclass {
+    font-size: 30px;
+    font-style: oblique;
+    text-align: center;
+    color: black;
     margin: 5px;
     padding: 5px;
 }

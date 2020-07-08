@@ -1,10 +1,14 @@
+let output = ""
+let hidebtn = []
+
 function selectfun() {
 
     var x = document.getElementById("btns");
     x.innerHTML = "";
     x.style.display = "none";
 
-
+    output = "";
+    hidebtn = [];
     //document.write(document.getElementById('ab').value)
     let s = document.getElementById('ab').value;
     document.getElementById('pid1').innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words<br>"
@@ -32,6 +36,8 @@ function selectfun() {
                     button.innerHTML = z[i];
                     button.className = "btn1";
                     button.id = "btn" + i;
+                    button.value = z[i]
+                    button.onclick = function() { showfun(button.id) };
                     var buttonDiv = document.getElementById("btns");
                     buttonDiv.appendChild(button);
                 }
@@ -56,6 +62,10 @@ function selectfun() {
                     var button = document.createElement("button");
                     button.innerHTML = z[i];
                     button.className = "btn1";
+                    button.value = z[i]
+                    button.onclick = function() { showfun(button.id) };
+
+                    button.id = "btn" + i;
                     var buttonDiv = document.getElementById("btns");
                     buttonDiv.appendChild(button);
                 }
@@ -82,4 +92,17 @@ function shuffle(arra1) {
         arra1[index] = temp;
     }
     return arra1;
+}
+
+function showfun(id) {
+    var x = document.getElementById(event.srcElement.id).value
+        //alert(x)
+    document.getElementById(event.srcElement.id).style.display = 'none'
+    document.getElementById('reform').style.display = 'block'
+        //hidebtn.appendChild(event.srcElement.id)
+    output += x
+    output += " "
+    document.getElementById('show').innerHTML = output
+    hidebtn.push(event.srcElement.id)
+    console.log(hidebtn)
 }
