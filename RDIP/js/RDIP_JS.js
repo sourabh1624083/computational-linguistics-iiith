@@ -23,6 +23,7 @@ function selectfun() {
     document.getElementById('showbef').innerHTML = "";
     document.getElementById('reform').style.display = 'none';
     document.getElementById('wrong').innerHTML = "";
+    document.getElementById('right').innerHTML = "";
     if (s === 'English') {
         x.style.display = "block";
 
@@ -117,7 +118,8 @@ function showfun(id) {
     document.getElementById('reform').style.display = 'block'
     document.getElementById('showbef').innerHTML = "Formed Sentence (after selecting words):"
         //hidebtn.appendChild(event.srcElement.id)
-    output += x
+
+    output += x.trim()
     output += " "
     document.getElementById('show').innerHTML = output
     hidebtn.push(event.srcElement.id)
@@ -132,6 +134,7 @@ function reformsent() {
     document.getElementById('btns').innerHTML = "";
     document.getElementById('showbef').innerHTML = "";
     document.getElementById('wrong').innerHTML = "";
+    document.getElementById('right').innerHTML = "";
     document.getElementById('correctcheck').style.display = 'none';
 
     output = ""
@@ -158,15 +161,18 @@ function showbtnagain() {
 function checkcorrectness() {
 
     document.getElementById('wrong').innerHTML = "";
+    document.getElementById('right').innerHTML = "";
     var str = output.trim();
     for (var i = 0; i < imp1.length; i++) {
         var str1 = imp1[i].trim();
-        console.log(i, str.localeCompare(str1), output)
-        if (str.localeCompare(str1) == 0) {
+        console.log(i, str1.localeCompare(str), str, str.length, str1, str1.length)
+        var n = str1.localeCompare(str);
+        if (n == 0) {
             document.getElementById('right').innerHTML = "Right !!!";
             //console.log("Write")
             return;
         }
     }
     document.getElementById('wrong').innerHTML = "Wrong !!!";
+    document.getElementById('getcorrectsent').style.display = 'block'
 }
