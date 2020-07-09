@@ -24,6 +24,9 @@ function selectfun() {
     document.getElementById('reform').style.display = 'none';
     document.getElementById('wrong').innerHTML = "";
     document.getElementById('right').innerHTML = "";
+    document.getElementById('getcorrectsent').style.display = 'none';
+    document.getElementById('hidesent').style.display = 'none';
+    document.getElementById('getans').style.display = 'none';
     if (s === 'English') {
         x.style.display = "block";
 
@@ -175,4 +178,40 @@ function checkcorrectness() {
     }
     document.getElementById('wrong').innerHTML = "Wrong !!!";
     document.getElementById('getcorrectsent').style.display = 'block'
+}
+
+function givecorrectsent() {
+    document.getElementById('getcorrectsent').style.display = 'none';
+    document.getElementById('hidesent').style.display = 'block';
+    document.getElementById('getans').style.display = 'none'
+    for (var i = 0; i < imp1.length; i++) {
+        document.getElementById('finalsent').innerHTML += i;
+
+        document.getElementById('finalsent').innerHTML += ")  ";
+        document.getElementById('finalsent').innerHTML += imp1[i];
+        document.getElementById('finalsent').innerHTML += " ;";
+        document.getElementById('finalsent').innerHTML += "<br>";
+    }
+}
+
+function hidesent() {
+    document.getElementById('getcorrectsent').style.display = 'none';
+    document.getElementById('hidesent').style.display = 'none';
+    document.getElementById('getans').style.display = 'block';
+    document.getElementById('finalsent').innerHTML = "";
+
+}
+
+function getans() {
+    document.getElementById('getcorrectsent').style.display = 'none';
+    document.getElementById('hidesent').style.display = 'block';
+    document.getElementById('getans').style.display = 'none'
+    for (var i = 0; i < imp1.length; i++) {
+        document.getElementById('finalsent').innerHTML += i;
+
+        document.getElementById('finalsent').innerHTML += ")  ";
+        document.getElementById('finalsent').innerHTML += imp1[i];
+        document.getElementById('finalsent').innerHTML += " ;";
+        document.getElementById('finalsent').innerHTML += "<br>";
+    }
 }
