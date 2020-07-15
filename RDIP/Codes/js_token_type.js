@@ -19,4 +19,8 @@ function selectfun() {
         }
     }
     rawFile.send();
+
+    document.getElementById('p2').style.display = 'block';
+    document.getElementById('row1').style.display = 'block';
+    document.getElementById('row2').style.display = 'block';
 }
