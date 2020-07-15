@@ -1,0 +1,4 @@
+Tokens correspond to the total number of word counts in a text while type corresponds to the total count of unique words in a text. We can say that language consists of various types of words and all the particular instances of these words are called tokens.
+The type/token distinction is related to that between universals and particulars. Tokens are concrete particular instances of a general and abstract type.
+There is only one word 'the' (type) but many instances of it found on this page (token).
+
