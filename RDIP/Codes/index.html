@@ -40,14 +40,26 @@
             <td><input type="number" id="type" name="type"></td>
         </tr>
     </table>
-    <button id="submit" type="submit" class="button" onclick="check()">Submit</button>
+    <button id="submit" type="submit" class="button" onclick="check()" hidden>Submit</button>
     <p id="p3" class="p3">
 
     </p>
     <p id="p4" class="p4">
 
     </p>
-    <button id="continue" class="continue" hidden>continue</button>
+    <button id="continue" class="continue" onclick="next_check()" hidden>continue</button>
+    <p style="text-align: center;" id="p5" hidden>
+        Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.
+    </p>
+    <p style="text-align: center;" id="p6" hidden>
+        #newType :
+    </p>
+    <p style="text-align: center;" id="typenew" hidden>
+        <input type="number" id="typenew">
+    </p>
+    <button class="buttonnext" id="buttonnext" type="submit" hidden>
+        Submit
+    </button>
 </body>
 
 </html>

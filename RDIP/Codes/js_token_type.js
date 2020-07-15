@@ -2,6 +2,17 @@ let k = "";
 let l = [];
 
 function selectfun() {
+    document.getElementById('token').value = ""
+    document.getElementById('type').value = ""
+    document.getElementById('token').style.backgroundColor = "white";
+    document.getElementById('type').style.backgroundColor = "white";
+    //document.getElementById('buttonnext').style.display = "none";
+    document.getElementById('continue').style.display = "none";
+    document.getElementById('p3').innerHTML = "";
+    document.getElementById('p4').innerHTML = "";
+    document.getElementById('submit').style.display = "block";
+    k = "";
+    l = [];
     var s = document.getElementById('dropdownmenu').value;
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "corpus.txt", true);
@@ -39,7 +50,9 @@ function check() {
     document.getElementById('continue').style.display = 'none';
     document.getElementById('p4').innerHTML = "";
     document.getElementById('p3').innerHTML = "";
-
+    //alert(actual_type)
+    //alert(actual_token)
+    //console.log(l, l.length, k, actual_type)
     if ((token == actual_token) && (type == actual_type)) {
         document.getElementById('token').style.backgroundColor = "green";
         document.getElementById('type').style.backgroundColor = "green";
@@ -54,6 +67,7 @@ function check() {
 
 function check_token() {
     var str = "";
+    l = [];
     for (var i = 0; i < k.length; i++) {
         if (k[i] === '"' || k[i] === "?" || k[i] === "," || k[i] === ".") {
             str.trim();
@@ -104,4 +118,16 @@ function check_type() {
     }
     //console.log(res)
     return res;
+}
+
+
+function next_check() {
+    document.getElementById('submit').style.display = "none";
+    document.getElementById('p3').innerHTML = "";
+    document.getElementById('p4').innerHTML = "";
+    document.getElementById('continue').style.display = "none";
+    document.getElementById('p5').style.display = "block";
+    document.getElementById('p6').style.display = "block";
+    document.getElementById('typenew').style.display = "block";
+    document.getElementById('buttonnext').style.display = "block";
 }
